@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Essence Gain Calculator</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Essence Gain Calculator</h1>
+      <label for="combatPowerStart">Start Combat Power:</label>
+      <input type="number" id="combatPowerStart" placeholder="Enter start value" />
+
+      <label for="combatPowerEnd">End Combat Power:</label>
+      <input type="number" id="combatPowerEnd" placeholder="Enter end value" />
+
+      <button onclick="calculateEssence()">Calculate Essence Gain</button>
+
+      <div id="result">
+        <p>Total Essence Gain: <span id="essenceResult">0</span></p>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
