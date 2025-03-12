@@ -3,25 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Essence Gain Calculator</title>
+    <title>Combat Power & Essence Gain Calculator</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Essence Gain Calculator</h1>
-      <label for="combatPowerStart">Start Combat Power:</label>
-      <input type="number" id="combatPowerStart" placeholder="Enter start value" />
+      <h1>Combat Power & Essence Gain Calculator</h1>
 
-      <label for="combatPowerEnd">End Combat Power:</label>
-      <input type="number" id="combatPowerEnd" placeholder="Enter end value" />
+      <!-- Dropdown to select calculation type -->
+      <label for="calculationType">Choose a calculation:</label>
+      <select id="calculationType" onchange="toggleInputs()">
+        <option value="combatPower">Calculate Combat Power</option>
+        <option value="essenceGain">Calculate Essence Gain</option>
+      </select>
 
-      <button onclick="calculateEssence()">Calculate Essence Gain</button>
+      <!-- Form for Combat Power Calculation -->
+      <div id="combatPowerInputs">
+        <h3>Calculate Combat Power</h3>
+        <label for="level">Level:</label>
+        <input type="number" id="level" placeholder="Enter level" />
 
-      <div id="result">
-        <p>Total Essence Gain: <span id="essenceResult">0</span></p>
+        <label for="essencePoints">Essence Points:</label>
+        <input type="number" id="essencePoints" placeholder="Enter essence points" />
+        <button onclick="calculateCombatPower()">Calculate Combat Power</button>
+        <p>Combat Power: <span id="combatPowerResult">0</span></p>
       </div>
-    </div>
 
-    <script src="./js/script.js"></script>
+      <!-- Form for Essence Gain Calculation -->
+      <div id="essenceGainInputs">
+        <h3>Calculate Essence Gain</h3>
+        <label for="combatPowerStart">Start Combat Power:</label>
+        <input type="number" id="combatPowerStart" placeholder="Enter start Combat Power" />
+
+        <label for="combatPowerEnd">End Combat Power:</label>
+        <input type="number" id="combatPowerEnd" placeholder="Enter end Combat Power" />
+
+        <button onclick="calculateEssenceGain()">Calculate Essence Gain</button>
+        <p>Essence Gain: <span id="essenceGainResult">0</span></p>
+      </div>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
